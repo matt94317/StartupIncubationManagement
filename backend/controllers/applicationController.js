@@ -1,56 +1,62 @@
 // Get application
-const Task = require("../models/Task");
-const getTasks = async (req, res) => {
+const application = require("../models/Application");
+const getApplications = async (req, res) => {
   try {
-    const tasks = await Task.find({ userId: req.user.id });
-    res.json(tasks);
+    const applications = await application.find({ userId: req.user.id });
+    res.json(applications);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
-
 // Add application
-const addTask = async (req, res) => {
+const addApplication = async (req, res) => {
   const { title, description, deadline } = req.body;
   try {
-    const task = await Task.create({
+    const application = await Application.create({
       userId: req.user.id,
       title,
       description,
       deadline,
     });
-    res.status(201).json(task);
+    res.status(201).json(application);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
-// Update application
-const updateTask = async (req, res) => {
+// update application
+const updateApplication = async (req, res) => {
   const { title, description, completed, deadline } = req.body;
   try {
-    const task = await Task.findById(req.params.id);
-    if (!task) return res.status(404).json({ message: "Task not found" });
-    task.title = title || task.title;
-    task.description = description || task.description;
-    task.completed = completed ?? task.completed;
-    task.deadline = deadline || task.deadline;
-    const updatedTask = await task.save();
-    res.json(updatedTask);
+    const application = await Application.findById(req.params.id);
+    if (!application)
+      return res.status(404).json({ message: "Application not found" });
+    application.title = title || application.title;
+    application.description = description || application.description;
+    application.completed = completed ?? application.completed;
+    application.deadline = deadline || application.deadline;
+    const updatedApplication = await application.save();
+    res.json(updatedApplication);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
-// Delete application
-const deleteTask = async (req, res) => {
+// delete application
+const deleteApplication = async (req, res) => {
   try {
-    const task = await Task.findById(req.params.id);
-    if (!task) return res.status(404).json({ message: "Task not found" });
-    await task.remove();
-    res.json({ message: "Task deleted" });
+    const application = await Application.findById(req.params.id);
+    if (!application)
+      return res.status(404).json({ message: "Application not found" });
+    await application.remove();
+    res.json({ message: "Application deleted" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
-module.exports = { getTasks, addTask, updateTask, deleteTask };
+module.exports = {
+  getApplications,
+  addApplication,
+  updateApplication,
+  deleteApplication,
+};
