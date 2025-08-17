@@ -1,94 +1,91 @@
+**🚀 Startup Incubation Management**
 
-**Assessment 1 (Total Marks **20**)**
-
-Assignment: **Software requirements analysis and design (**Full-Stack CRUD Application Development with DevOps Practices**)**
-
+The Startup Incubation Management application helps university incubators efficiently manage startup programs. It provides tools for handling applications, assigning mentors, tracking milestones, and organizing demo day events — all in one streamlined platform.
 
 ---
 
-**Objective**
+**📌 Project Overview**
 
-You have been provided with a starter project that includes user authentication using Node.js, React.js, and MongoDB. Your task is to extend this application by implementing CRUD (Create, Read, Update, Delete) operations of different featuresfor a real-world application of your choice, while following industry best practices such as: 
+This system enables **students, mentors, and administrators** to collaborate effectively throughout the incubation process.
 
-* **Project Management with JIRA**
-* **Requirement Diagram**, **Block Definition Diagram (**BDD), Parametric Diagram using**SysML**
-* **Version Control using GitHub**
-* **CI/CD Integration for Automated Deployment**
+- Students: Submit applications, build startup profiles, track progress, and book demo slots.
+- Mentors: Manage availability, run office hour sessions, and provide feedback.
 
----
+- Administrators: Monitor progress via milestones/KPIs, schedule events, and prepare demo day logistics.
 
-**GitHub link of the starter project: **[https://github.com/rajuiit/sdlapps](https://github.com/rajuiit/sdlapps)
+The application is built with **Node.js**, **React.js**, and **MongoDB**, deployed on **AWS EC2** with **CI/CD pipelines** using GitHub Actions.
 
 ---
 
-**Requirement**
+**✨ Features**
 
-1. **Choose a Real-World Application**
+**🎓 User Side**
 
-We will send you an email to choose a Real-World project. If you face any difficulties in choosing your project, please contact your tutor.
+- Application form submission (save draft, upload deck/video/docs)
+- Startup profile builder (logo, description, team members, links)
+- Application stage tracking (visual timeline)
+- Milestone tracking & KPI updates
+- Pitch slot booking for demo day
 
-2. **Project Design with SysML and Project Management with JIRA**
+**🛠️ Developer Side**
 
-* Draw a requirements diagram, Block Definition Diagram (BDD), and Parametric Diagram based on your project (Connect all functional features).
-* Create a JIRA project and define:
-  * Epic
-  * User Stories (features required in your app)
-  * Child issues or Subtasks (breaking down development work)
-  * Sprint Implementation (organizing work into milestones)
-* Provide your JIRA board URL in the project README.
-
-**3. Backend Development (Node.js + Express + MongoDB)**
-
-* Set up and configure the MongoDB database connection.
-* Implement various backend functions for handling application data.Ensure that all functions are compatible with an Application Programming Interface (API) structure(Follow existing patterns used in the Task Manager App where applicable).
-* Implement CRUD operations forcreating, reading, updating, and deleting records for each functionality.
-
-4. **Frontend Development (React.js)**
-
-* Create a user-friendly interface to interact with your API endpoint (Follow task manager app).
-* Implement different forms for adding, updating, and deleting records.
-* Display data using tables, cards, or lists (Follow how we showed data in task manager app, try to implement better visualization for the frontend.)
-
-**5. Authentication & Authorization** (Prerequisite Task)
-
-* Ensure only authenticated users can access and perform CRUD operations. (Already developed in your project)
-* Use JWT (JSON Web Tokens) for user authentication (Use the task manager one from .env file).
-
-**6. GitHub Version Control & Branching Strategy**
-
-* Use GitHub for version control and maintain:
-* main branch (stable production-ready code)
-* Feature branches for each new feature
-* Follow proper commit messages and pull request (PR) for code reviews.
-
-**7. CI/CD Pipeline Setup**
-
-* Implement a CI/CD pipeline using GitHub Actions to:
-* Automatically run tests on every commit/pull request (Optional).
-* Deploy the backend to AWS. (Use the QUT provided EC2 instance)
-* Deploy the frontend to AWS.
-* Document your CI/CD workflow in the README.
+- Authentication & Authorization (JWT)
+- Database Management (MongoDB)
+- Scheduling & Calendar Integration
+- Notification System
+- Testing & CI/CD (GitHub Actions → AWS EC2 deployment)
 
 ---
 
-**Submission Requirements**
+**🏗️ System Design**
 
-**A report **contains** the following (Provide screenshots as evidence for each implemented task. **The screenshot should **contain** your username** from JIRA, GITHUB, and AWS**):
+SysML diagrams were used to define structure and constraints:
 
-* **JIRA Project **Management**(Provide screenshots in the **report o**f at least two epics**, **including user story, sub**t**a**sks**. **Please **don’t** provide **the **U**ser Authentication** epic**.**Provide your JIRA Board URL in the report and README file as well.**Through the JIRA Board, we will systematically review the completeness of the project features, organised under Epics, User Stories, and Sub-tasks.**
-* Requirement diagram, Block Definition Diagram (BDD), Parametric Diagram (Using project features).
-* **GitHub Repository (backend/ and frontend/)** link. We will **review** your code implementation, which you followed from the task description. We will also **review** your commits, main branch, feature branches, and pull requests. **(**Please note that the authorisation** (Log In, Registration)** is the prerequisite for backend development.**)**
-* CI/CD pipeline details step by step screenshot.
-* README.md with:
-* Project setup instructions.
-* Public URL of your project.
-* Provide a project-specific username and password if we need to access your dashboard.
+- **Requirement Diagram** – captures functional needs
+- **Block Definition Diagram (BDD)** – system architecture
+- **Parametric Diagram** – performance and constraints
+
+- Implement various backend functions for handling application data.Ensure that all functions are compatible with an Application Programming Interface (API) structure(Follow existing patterns used in the Task Manager App where applicable).
+- Implement CRUD operations forcreating, reading, updating, and deleting records for each functionality.
 
 ---
 
-**Assessment Criteria:**
+**📋 Project Management**
 
-* Clarity and completeness of Jira board and SysML models.
-* Adherence to Git best practices and practical contributions.
-* Successful implementation, deploymentand CI/CD pipeline.
-* Problem-solving skills and the ability to go beyond basic requirements.
+The project followed **Agile practices** using **Jira** :
+
+- Epics, User Stories, and Subtasks for task tracking
+- Sprint planning, execution, and retrospective boards
+- Integration with GitHub for commit history tracking
+
+---
+
+**⚙️ Development & Deployment**
+
+- **Frontend** : React.js
+- **Backend** : Node.js (Express.js)
+- **Database** : MongoDB
+- **Hosting** : AWS EC2 (PM2 process manager)
+- **CI/CD** : GitHub Actions pipeline with test automation & deployment
+
+---
+
+✅ **Testing & CI/CD**
+
+- Unit tests and integration tests executed in GitHub Actions
+- CI/CD pipeline automates build, test, and deploy
+- Environments secured with GitHub Secrets (MONGO_URI, JWT_SECRET, PORT)
+
+---
+
+📈 **Discussion & Reflection**
+
+The system successfully delivered a **secure, scalable, and maintainable** platform for managing incubation programs. By combining structured SysML design, Agile management in Jira, and automated CI/CD deployment to AWS, the project reflects a **real-world production workflow** .
+
+Through this project, I gained practical experience in:
+
+- Requirement analysis and SysML modeling
+- Integrating frontend and backend components
+- Managing tasks with Jira and GitHub branching
+- Solving challenges (API communication, CORS, validation)
+- Improving **time management** and **problem-solving skills**
