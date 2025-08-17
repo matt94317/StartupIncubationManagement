@@ -10,7 +10,6 @@ This system enables **students, mentors, and administrators** to collaborate eff
 
 - Students: Submit applications, build startup profiles, track progress, and book demo slots.
 - Mentors: Manage availability, run office hour sessions, and provide feedback.
-
 - Administrators: Monitor progress via milestones/KPIs, schedule events, and prepare demo day logistics.
 
 The application is built with **Node.js**, **React.js**, and **MongoDB**, deployed on **AWS EC2** with **CI/CD pipelines** using GitHub Actions.
@@ -44,7 +43,6 @@ SysML diagrams were used to define structure and constraints:
 - **Requirement Diagram** – captures functional needs
 - **Block Definition Diagram (BDD)** – system architecture
 - **Parametric Diagram** – performance and constraints
-
 - Implement various backend functions for handling application data.Ensure that all functions are compatible with an Application Programming Interface (API) structure(Follow existing patterns used in the Task Manager App where applicable).
 - Implement CRUD operations forcreating, reading, updating, and deleting records for each functionality.
 
@@ -75,6 +73,16 @@ The project followed **Agile practices** using **Jira** :
 - Unit tests and integration tests executed in GitHub Actions
 - CI/CD pipeline automates build, test, and deploy
 - Environments secured with GitHub Secrets (MONGO_URI, JWT_SECRET, PORT)
+
+---
+
+✅ **Project Information Details**
+
+Public URL: 3.27.187.126
+
+AccountName: Matthew
+
+Password: matt94317
 
 ---
 
